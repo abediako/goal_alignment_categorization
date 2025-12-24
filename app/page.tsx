@@ -1,7 +1,15 @@
+"use client";
 //what actually goes on the home page
 
+//temp test for testing supabase implementation
+import { supabase } from '@/lib/supabaseClient';
+import { useEffect } from 'react';
 
 export default function Home() {
+  useEffect(() => {
+    supabase.from('content_sources').select('*').then(res => console.log(res))
+  }, [])
+
   return (
     <main className="p-6">
       <h1 className="text-2xl font-semibold">
